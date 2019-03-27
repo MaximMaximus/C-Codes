@@ -1,3 +1,5 @@
+// functions for armstrong.c
+
 int benutzerEingabe(int *zahl, int *userZahl)
 {
 	*zahl = 0;
