@@ -1,4 +1,5 @@
 // Standalone code for ARMSTRONGZAHL
+// Pointer Version
 
 #include <stdio.h>
 #include <stdlib.h>
