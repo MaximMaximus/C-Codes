@@ -1,3 +1,5 @@
+// calculation of the cross sum with a recursive function
+
 #include <stdio.h>
 
 int quersumme(int zahl)
