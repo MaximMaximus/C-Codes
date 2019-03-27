@@ -1,3 +1,5 @@
+// a short demonstration of the bitwise operator
+
 #include <stdio.h>
 
 int main()
