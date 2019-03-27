@@ -1,3 +1,5 @@
+// simple loop geometry
+
 #include <stdio.h>
 #include <math.h>
 
