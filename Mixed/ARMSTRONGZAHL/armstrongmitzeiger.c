@@ -1,3 +1,5 @@
+// Standalone code for ARMSTRONGZAHL
+
 #include <stdio.h>
 #include <stdlib.h>
 
