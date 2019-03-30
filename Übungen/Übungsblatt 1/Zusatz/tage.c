@@ -65,6 +65,7 @@ int main() {
 
 		if ( tag < 1 || tag > monatsTage ) {
 			eingabe = 0;
+			monatsTage = 0;
 		} else if ( monat < 1 || monat > 12 ) {
 			eingabe = 0;
 		} else if ( jahr < 1 || jahr > 9999 ) {
