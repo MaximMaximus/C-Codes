@@ -153,9 +153,9 @@ int main() {
 			eingabe = 0;
 		} else if ( jahrZwei < jahrEins ) {
 			eingabe = 0;
-		} else if ( monatZwei < monatEins ) {
+		} else if ( monatZwei < monatEins && jahrZwei == jahrEins ) {
 			eingabe = 0;
-		} else if ( tagZwei < tagEins ) {
+		} else if ( tagZwei < tagEins && jahrZwei == jahrEins ) {
 			eingabe = 0;
 		} else {
 			eingabe = 1;
