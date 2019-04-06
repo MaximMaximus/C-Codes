@@ -5,35 +5,31 @@ int main()
     int start = 0;
     int ende = 127;
     
-    int bereich = ende - start;
-    
-    int i = 0;
-    int s = 0;
+    int differenz = ende - start;
     
     int spalte = 4;
     
-    int save = 0;
+    int zeilen = 0;
     
-    int differenz = 0;
-    
-    differenz = (bereich / spalte) +1;
+    zeilen = (differenz / spalte) +1;
    
-    printf("Zeilen: %d Spalten: %d\n", differenz, spalte );
-
-    for ( i = 1; i <= differenz; i++ ) {
+    printf("Zeilen: %d Spalten: %d\n", zeilen, spalte );
+    
+    int wert = 0;
+    
+    int z = 0;
+    int s = 0;
+    
+    for ( z = 1; z <= zeilen; z++ ) {
 
         for ( s = 1; s <= spalte; s++ ) {
             
-            save = i+differenz*s-differenz+start-1; 
+            wert = z+zeilen*s-zeilen+start-1; 
 
-            if ( s == 1 ) {
-                printf("%.3d: %3c | ", save, save); 
+            if ( wert > ende ) {
+                printf("");
             } else {
-                if ( save > ende ) {
-                    printf("");
-                } else {
-                    printf("%.3d: %3c | ", save, save);
-                }
+                printf("%.3d: %3c | ", wert, wert);
             }
         }
         printf("\n");
