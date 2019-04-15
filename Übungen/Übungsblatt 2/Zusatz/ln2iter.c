@@ -2,12 +2,12 @@
 
 int main()
 {
-    int wertX = 2;
+    int wertX = 100;
     
     float endwert = 0.00;
     float i = 0;
     float j = 2;
-    for(i=1; endwert <= wertX; i++)
+    for(i=1; endwert <= wertX; i+=2)
     {
         if(wertX == 1) return 1;
         else {
