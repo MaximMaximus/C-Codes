@@ -75,10 +75,73 @@ void tankanzeige_vertikal_1(double liter) {
 	int i = 0;
 
 	for ( i = TANK_ANZEIGE_STELLEN; i > 0; i-- ) {
-		if ( i <= getankte_stellen ) printf("%d*\n",i);
-			else printf("%d-\n", i);
+		if ( i <= getankte_stellen ) printf("*\n");
+			else printf("-\n");
 	}
-	printf(" %.2f L", liter);
+	printf("%.2f L\n", liter);
+}
+
+void tankanzeige_vertikal_2(double liter) {
+
+	double tank_liter = TANK_LITER;
+	double tank_anzeige = TANK_ANZEIGE_STELLEN;
+
+	double getankte_stellen = (tank_anzeige/tank_liter)  * liter;
+	int tabellen_liter = getankte_stellen;
+
+	printf("Tankfuellung: %.2f%%\n", 100 / TANK_ANZEIGE_STELLEN * getankte_stellen);
+
+	int i = 0;
+	int j = 0;
+	int spalten = 5;
+
+	for ( i = TANK_ANZEIGE_STELLEN + 1; i >= 0; i-- ) {
+		for ( j = 1; j <= spalten; j++ ) {
+			if ( i == TANK_ANZEIGE_STELLEN + 1 || i == 0 )
+				if ( j == 1 || j == spalten ) printf("+");
+				else printf("-");
+			else if ( i < TANK_ANZEIGE_STELLEN + 1 || i > 0 )
+					if ( j == 1 || j == spalten) 
+						if ( i == tabellen_liter && j == spalten ) printf("| %.2f", liter);
+						else printf("|");
+					else if ( i <= getankte_stellen )
+							if ( j == 3) printf("*");
+							else printf(" ");
+					else printf(" ");
+		}
+		printf("\n");
+	}
+	/*
+	for ( i = TANK_ANZEIGE_STELLEN + 1; i >= 0; i-- ) {
+		for ( j = 1; j <= spalten; j++ ) {
+			if ( i == TANK_ANZEIGE_STELLEN + 1 || i == 0 ) {
+				if ( j == 1 || j == spalten ) {
+					printf("+");
+				} else {
+					printf("-");
+				}
+			} else 
+			if ( i < TANK_ANZEIGE_STELLEN + 1 || i > 0 ) {
+				if ( j == 1 || j == spalten) {
+					if ( i == tabellen_liter && j == spalten ) {
+						printf("| %.2f", liter);
+					} else {
+						printf("|");
+					}
+				} else if ( i <= getankte_stellen ) {
+					if ( j == 3) {
+						printf("*");
+					} else {
+						printf(" ");
+					}
+				} else {
+					printf(" ");
+				}
+			}
+		}
+		printf("\n");
+	}
+	*/
 }
 
 int main() {
@@ -86,6 +149,9 @@ int main() {
 	tankanzeige_horizontal_2(59.10f);
 	tankanzeige_horizontal_3(59.10f);
 	tankanzeige_vertikal_1(59.10f);
+	tankanzeige_vertikal_2(59.10f);
 
 	return 0;
 }
+
+
