@@ -101,13 +101,13 @@ void tankanzeige_vertikal_2(double liter) {
 				if ( j == 1 || j == spalten ) printf("+");
 				else printf("-");
 			else if ( i < TANK_ANZEIGE_STELLEN + 1 || i > 0 )
-					if ( j == 1 || j == spalten) 
-						if ( i == tabellen_liter && j == spalten ) printf("| %.2f", liter);
-						else printf("|");
-					else if ( i <= getankte_stellen )
-							if ( j == 3) printf("*");
-							else printf(" ");
+				if ( j == 1 || j == spalten) 
+					if ( i == tabellen_liter && j == spalten ) printf("| %.2f", liter);
+					else printf("|");
+				else if ( i <= getankte_stellen )
+					if ( j == 3) printf("*");
 					else printf(" ");
+				else printf(" ");
 		}
 		printf("\n");
 	}
