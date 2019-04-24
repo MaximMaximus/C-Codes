@@ -1,0 +1,1 @@
+int squirrel_party(short stueck, char tag);
