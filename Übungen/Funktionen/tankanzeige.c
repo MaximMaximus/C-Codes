@@ -73,7 +73,6 @@ void tankanzeige_vertikal_1(double liter) {
 	printf("Tankfuellung: %.2f%%\n", 100 / TANK_ANZEIGE_STELLEN * getankte_stellen);
 
 	int i = 0;
-	int j = 0;
 
 	for ( i = TANK_ANZEIGE_STELLEN; i > 0; i-- ) {
 		if ( i <= getankte_stellen ) printf("%d*\n",i);
