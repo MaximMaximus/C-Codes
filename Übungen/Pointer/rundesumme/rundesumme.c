@@ -7,9 +7,11 @@ void betrag(int *zahl) {
 void sort(int *a, int *b) {
 	int speicher = 0;
 
-	speicher = *b;
-	*b = *a;
-	*a = speicher;
+	if ( *a > *b ) {
+		speicher = *b;
+		*b = *a;
+		*a = speicher;
+	}
 }
 
 void runde_summe(int *a, int *b, int *c, int *summe) {
@@ -37,5 +39,5 @@ void runde_summe(int *a, int *b, int *c, int *summe) {
 
 	if ( *summe < 10 ) *summe = 10;
 	else if ( *summe % 10 < 5 ) *summe = *summe /10 * 10;
-	else if ( *summe % 10 > 5 ) *summe = *summe /10 * 10 + 10;
+	else if ( *summe % 10 >= 5 ) *summe = *summe /10 * 10 + 10;
 }
