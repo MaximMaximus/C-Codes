@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 int zahllaenge(int zahl) {
 	int laenge = 0;
