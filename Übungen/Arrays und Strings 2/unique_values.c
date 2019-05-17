@@ -8,7 +8,6 @@ int has_unique_values(int a[], int l) {
 			printf("i %d wert %d und j: %d wert %d\n", i, a[i], j, a[j+i]);
 			if ( a[i] == a[j+i] ) {
 				return 0;
-				break;
 			}
 		}
 	}
