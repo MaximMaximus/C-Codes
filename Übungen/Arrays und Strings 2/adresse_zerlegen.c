@@ -8,7 +8,7 @@ void adresse_zerlegen (char *original, char *street, int *nummer) {
 	}
 	street[i] = '\0';
 
-	while(original[i] >= '0' && original[i] <= '9') {
+	while(original[i] >= '0' && original[i] <= '9' && original[i] != ',' && original[i] != '.') {
 		*nummer = *nummer * 10 + original[i] - '0';
 		i++;
 	}
