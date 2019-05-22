@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 void print_feld(int feld[9][9]) {
 	int i = 0;
@@ -68,7 +69,9 @@ int main() {
 		scanf("%d %d %d", &zeile, &spalte, &wert);
 		
 		if ( check_feld(feld, zeile, spalte, wert) == 0 && wert != 0 ) {
-			printf("Fehler!\a\a\n");
+			printf("Fehler!\n");
+			sleep(500);
+			printf("\a\a\n");
 		} else {
 			printf("\a\n");
 		}
