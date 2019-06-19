@@ -45,16 +45,17 @@ void bewerten(struct Artikel **anchor, int nr, char *bewertungstext, int sterne)
 void anzeigen(struct Artikel **artikel) {
 	int i = 0;
 	int j = 0;
+
 	while(artikel[i] != NULL) {
 		printf("Artikel: %d - %s\n", artikel[i]->artnr, artikel[i]->bezeichnung);
-		
-		while(artikel[i]->bewertungen != NULL) {
-			printf("%*c", -9+artikel[i]->bewertungen->punkte, ' ');
-			for(j = 0; j < artikel[i]->bewertungen->punkte; j++) {
+		struct Bewertung *temp = artikel[i]->bewertungen;
+		while(temp != NULL) {
+			printf("%*c", -8+temp->punkte, ' ');
+			for(j = 0; j < temp->punkte; j++) {
 				printf("*");
 			}
-			printf(" %s\n", artikel[i]->bewertungen->text);
-			artikel[i]->bewertungen = artikel[i]->bewertungen->next;
+			printf(" %s\n", temp->text);
+			temp = temp->next;
 		}
 		printf("\n");
 		i++;
@@ -62,18 +63,22 @@ void anzeigen(struct Artikel **artikel) {
 }
 
 int main() {
-
+	//system("cls");
 	struct Artikel *artikel[MAX_ARTIKEL] = { NULL };
 
 	anlegen(artikel, 12345, "Hoerbuch Biene Maja");
 	bewerten(artikel, 12345, "Hoere ich zum Einschlafen", 4);
 	bewerten(artikel, 12345, "Mehr Handlung!", 1);
-
+	//printf("Artikelnummer: %d\nArtikelbezeichnung: %s\n", artikel[0]->artnr, artikel[0]->bezeichnung);
+	//printf("Bewertung: %s\n", artikel[0]->bewertungen->text);
+	//printf("Bewertung: %s\n", artikel[0]->bewertungen->next->text);
 
 	anlegen(artikel, 4549, "Smartphone Universum III");
 	bewerten(artikel, 4549, "Voll das krasse Handy", 5);
+	bewerten(artikel, 4549, "Wo ist Akku", 1);
+	//printf("Artikelnummer: %d\nArtikelbezeichnung: %s\n", artikel[1]->artnr, artikel[1]->bezeichnung);
+	//printf("Bewertung: %s\n", artikel[1]->bewertungen->text);
 
-	anzeigen(artikel);
 	anzeigen(artikel);
 
 	return 0;
