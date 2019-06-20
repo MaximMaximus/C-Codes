@@ -43,11 +43,11 @@ void add_mond(Planet **anchor, char *namePlanet, char *nameMond, int durchmesser
 	while(anchor[i] != NULL) {
 		if(strcmp(anchor[i]->name, namePlanet) == 0 ) {
 			while(anchor[i]->monde[j] != NULL) {
-				if ( j > MAX_MONDE ) {
+				if ( j >= MAX_MONDE ) {
 					printf("Fehler! Maximale Mondanzahl ist ueberschritten!\n");
-					printf("%d\n",j);
 					break;
 				}
+					printf("%d\n",j);
 				j++;
 			}
 			if( j < MAX_MONDE ) {
